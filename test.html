@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+        .test{
+            position: absolute;
+            top: 50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+        }
+        html {
+            height: 100%;
+        }
+        body {
+            font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
+            background: #79a8ae;
+            color: #CFEBE4;
+            font-size: 18px;
+            line-height: 2;
+            letter-spacing: 1.2px;
+            margin: 0;
+        }
+        label {
+            color: black;
+        }
+        .mainBody {
+            font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
+            background: #79a8ae;
+            color: #CFEBE4;
+            font-size: 18px;
+            line-height: 2;
+            letter-spacing: 1.2px;
+            margin: 0;
+            background: -webkit-linear-gradient(top, rgb(203, 235, 219) 0%, rgb(55, 148, 192) 120%);
+            background: -moz-linear-gradient(top, rgb(203, 235, 219) 0%, rgb(55, 148, 192) 120%);
+            background: -o-linear-gradient(top, rgb(203, 235, 219) 0%, rgb(55, 148, 192) 120%);
+            background: -ms-linear-gradient(top, rgb(203, 235, 219) 0%, rgb(55, 148, 192) 120%);
+            background: linear-gradient(top, rgb(203, 235, 219) 0%, rgb(55, 148, 192) 120%);
+        }
+    </style>
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <title>520特别行动 ❤️</title>
+</head>
+<body class="mainBody">
+    <div class="test" id ="test2">
+    <form class="form-inline">
+        <div class="form-group">
+            <label for="inputValue">请输入密码：</label>
+            <input type="password" class="form-control" id="inputValue"  type="text">
+        </div>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
+        <button type="button" class="btn btn-primary" onclick ="clickMe()" id="myButton">确认</button>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <button type="button" class="btn btn-info" onclick ="notice()" id="noticeBtn" style="display: none">提示1</button>
+    </form>
+    </div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-Lge2E2XotzMiwH69/MXB72yLpwyENMiOKX8zS8Qo7LDCvaBIWGL+GlRQEKIpYR04" crossorigin="anonymous"></script>
+<script src="sakura.js"></script>
+<script type="text/javascript">
+
+    let num = 0;
+    function clickMe(){
+        let page = 0;
+        num += 1;
+        var inputValue = document.getElementById('inputValue');
+        let value = inputValue.value;
+        if (value == ''){
+            alert('密码肯定不为空啊，小笨蛋。');
+        }
+        else if(value == '1234'){
+            alert('怎么会有人设置这么蠢的密码');
+        }else if (value == '1123'){
+            alert('开始试我的生日了');
+        }else if (value == '1007'){
+            alert('开始试自己的生日了');
+        }else if (value == '520'){
+            alert('Not Today!');
+        }else if (value == '3645'){ //此处为正确密码
+            // let className = document.getElementsByClassName("test2");
+            // className[0].innerHTML = '';
+            //
+            // // 添加新内容
+            // var newContent = '<label ><h1>恭喜成功通过第一关，不管是自己猜到的还是找男朋友要到的，总之恭喜</h1></label></br>' +
+            //     '<label ><p>好的，接下来请打开相册的第'+ page +'页,你会有新的发现。</p></label>';
+            // className[0].innerHTML += newContent;
+            //
+            // return;
+            window.open('end.html?page=' + page, '_self');
+        }else {
+            alert('密码不正确哦，再试试吧。（或者求求我）');
+        }
+        if (num >= 4 ){
+            debugger
+            var noticeBtn = document.getElementById("noticeBtn");
+            noticeBtn.style.display = "";
+            num = -9999999;
+        }
+        inputValue.value = '';
+    }
+
+    function notice(){
+        alert('密码是一个4位数。');
+    }
+
+</script>
+</html>
