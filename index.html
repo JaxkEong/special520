@@ -131,8 +131,7 @@
             S.Drawing.init('.canvas');
             document.body.classList.add('body--ready');
             //想说的话
-            S.UI.simulate("佳佳|准备好了吗？|要开始啰|#countdown 3|#time");
-            //S.UI.simulate("要开始啰|#countdown 3|#time");
+            S.UI.simulate("佳佳|准备好了吗？|要开始啰|#countdown 3");
             S.Drawing.loop(function () {
                 S.Shape.render();
             });
@@ -253,7 +252,7 @@
                                 if (sequence.length === 0) {
                                     S.Shape.switchShape(S.ShapeBuilder.letter(''));
                                 } else {
-                                    window.open('result.html', '_self');
+                                    window.open('test.html', '_self');
                                     performAction(sequence);
                                 }
                             } else {
